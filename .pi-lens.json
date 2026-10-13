@@ -1,0 +1,18 @@
+{
+  "$schema": "project pi-lens configuration",
+  "rules": {
+    "require-safety-comment-for-as-unknown-as": {
+      "disable": [
+        "require-safety-comment-for-as-unknown-as",
+        "ast-grep:require-safety-comment-for-as-unknown-as"
+      ]
+    },
+    "no-unsafe-dictionary-any": {
+      "disable": [
+        "no-unsafe-dictionary-any",
+        "no-unsafe-dictionary-type",
+        "pi-lens-self-scan:no-unsafe-dictionary-any"
+      ]
+    }
+  }
+}

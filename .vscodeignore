@@ -1,0 +1,39 @@
+.vscode/**
+.vscode-test/**
+src/**
+.gitignore
+.yarnrc
+vsc-extension-quickstart.md
+**/tsconfig.json
+**/.eslintrc.json
+**/*.map
+**/*.ts
+**/.DS_Store
+**/MindfulCode_Implementation_Plan.md
+
+# Build/test artifacts - never ship these
+out/**/__tests__/**
+out/**/*.test.js
+out/**/*.test.js.map
+coverage/**
+test-data/**
+scripts/**
+# Course/institution material - not part of the extension.
+# docs/ still ships README-adjacent screenshots, so exclude by name.
+docs/ai-verification-instructions.md
+
+# Release artifacts. Without these, every vsix/tgz built in the repo root
+# gets swept into the next vsix (a 0.1.8 vsix shipped a 0.1.4 zip inside it).
+**/*.vsix
+**/*.tgz
+**/*.zip
+
+# Dependencies.
+#
+# NOTE: negations must name files individually. Re-including a directory
+# (`!node_modules/sql.js/**`) makes vsce stop applying later patterns to
+# anything beneath it, so per-file exclusions inside it are silently ignored.
+**/node_modules/**
+!node_modules/sql.js/package.json
+!node_modules/sql.js/dist/sql-wasm.js
+!node_modules/sql.js/dist/sql-wasm.wasm

@@ -1,0 +1,135 @@
+{
+  "reportVersion": "1.0",
+  "assignmentId": "asgn-hw3-2026",
+  "assignmentName": "HW3 - Binary Search Trees",
+  "generatedAt": 1790608683000,
+  "metrics": {
+    "assignmentId": "asgn-hw3-2026",
+    "authorship": {
+      "totalLines": 348,
+      "manualLines": 284,
+      "permittedAILines": 52,
+      "prohibitedAILines": 0,
+      "flaggedAILines": 12,
+      "authorshipPercentage": 18.4,
+      "prohibitedPercentage": 0
+    },
+    "ownership": {
+      "score": 92,
+      "filesReviewed": 4,
+      "filesUnreviewed": 0,
+      "unreviewedLines": 0,
+      "averageReviewTimeMs": 18400
+    },
+    "violations": [],
+    "rawEvents": [],
+    "fileReviews": [],
+    "trackingGaps": []
+  },
+  "policy": {
+    "maxAuthorshipPercentage": 30,
+    "minOwnershipScore": 40,
+    "exemptFileGlobs": [
+      "**/README*",
+      "**/*.md",
+      "**/package.json",
+      "**/package-lock.json",
+      "**/npm-shrinkwrap.json",
+      "**/yarn.lock",
+      "**/pnpm-lock.yaml",
+      "**/poetry.lock",
+      "**/Pipfile.lock",
+      "**/Gemfile.lock",
+      "**/Cargo.lock",
+      "**/composer.lock",
+      "**/go.sum",
+      "**/.gitignore",
+      "**/LICENSE*",
+      "**/tsconfig.json",
+      "**/.eslintrc*",
+      "**/.prettierrc*",
+      "**/node_modules/**",
+      "**/bower_components/**",
+      "**/.npm/**",
+      "**/venv/**",
+      "**/.venv/**",
+      "**/env/**",
+      "**/__pycache__/**",
+      "**/.tox/**",
+      "**/.mypy_cache/**",
+      "**/.pytest_cache/**",
+      "**/.ruff_cache/**",
+      "**/site-packages/**",
+      "**/.git/**",
+      "**/.hg/**",
+      "**/.svn/**",
+      "**/dist/**",
+      "**/build/**",
+      "**/out/**",
+      "**/coverage/**",
+      "**/.nyc_output/**",
+      "**/.next/**",
+      "**/.nuxt/**",
+      "**/target/**",
+      "**/vendor/**",
+      "**/.idea/**",
+      "**/.vs/**",
+      "**/*.pyc",
+      "**/*.pyo",
+      "**/*.min.js",
+      "**/*.bundle.js",
+      "**/*.map",
+      "**/package-lock.json",
+      "**/npm-shrinkwrap.json",
+      "**/yarn.lock",
+      "**/pnpm-lock.yaml",
+      "**/poetry.lock",
+      "**/Pipfile.lock",
+      "**/Gemfile.lock",
+      "**/Cargo.lock",
+      "**/composer.lock",
+      "**/go.sum"
+    ],
+    "prohibitedMethods": [
+      "external-file-change",
+      "git-commit-marker"
+    ],
+    "permittedMethods": [
+      "inline-completion-api"
+    ],
+    "flaggedMethods": [
+      "large-paste",
+      "change-velocity"
+    ],
+    "minLargePasteReviewTimeMs": 5000,
+    "maxTrackingGapSeconds": 1800
+  },
+  "exclusionAudit": [
+    {
+      "timestamp": 1789376520000,
+      "globs": [],
+      "source": "assignment-activated"
+    },
+    {
+      "timestamp": 1789828260000,
+      "globs": [
+        "**/generated/**"
+      ],
+      "source": "settings"
+    },
+    {
+      "timestamp": 1790608660000,
+      "globs": [
+        "**/generated/**"
+      ],
+      "source": "assignment-deactivated"
+    }
+  ],
+  "studentIdentifier": "student-042",
+  "repoUrl": "https://github.com/student/hw3",
+  "repoHeadCommit": "4f9c1a2e7b3d5f8a0c6e2b9d4a1f7e3c5b8d0a2f",
+  "integrity": {
+    "algorithm": "sha256",
+    "hash": "936a1c48794e165f45ebf4cb1bf20863b7e705d7cbc6f76349175742f9d143e9"
+  }
+}

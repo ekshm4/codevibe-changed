@@ -1,0 +1,271 @@
+{
+  "name": "codevibe-verify",
+  "displayName": "CodeVibe",
+  "description": "Track your coding flow. Balance AI assistance with skill development.",
+  "version": "0.1.11",
+  "publisher": "codepause",
+  "bin": {
+    "codevibe-verify": "./out/cli/verify.js",
+    "verify-assignment-report": "./out/cli/verify.js"
+  },
+  "icon": "resources/codepause-icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/waka-man/codevibe"
+  },
+  "engines": {
+    "vscode": "^1.85.0",
+    "node": ">=20.0.0"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codePause.openDashboard",
+        "title": "CodeVibe: Open Dashboard",
+        "icon": "$(dashboard)"
+      },
+      {
+        "command": "codePause.startOnboarding",
+        "title": "CodeVibe: Start Onboarding",
+        "icon": "$(rocket)"
+      },
+      {
+        "command": "codePause.resetOnboarding",
+        "title": "CodeVibe: Reset Onboarding (Debug)"
+      },
+      {
+        "command": "codePause.openSettings",
+        "title": "CodeVibe: Open Settings",
+        "icon": "$(settings-gear)"
+      },
+      {
+        "command": "codePause.snooze",
+        "title": "CodeVibe: Snooze Alerts for Today",
+        "icon": "$(bell-slash)"
+      },
+      {
+        "command": "codePause.refreshDashboard",
+        "title": "CodeVibe: Refresh Dashboard",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "codePause.showStats",
+        "title": "CodeVibe: Show Quick Stats"
+      },
+      {
+        "command": "codePause.showDatabaseInfo",
+        "title": "CodeVibe: Show Database Info"
+      },
+      {
+        "command": "codePause.showProgression",
+        "title": "CodeVibe: Show Progression & Level",
+        "icon": "$(star)"
+      },
+      {
+        "command": "codePause.showAchievements",
+        "title": "CodeVibe: Show Achievements",
+        "icon": "$(trophy)"
+      },
+      {
+        "command": "codePause.showAdvancedSettings",
+        "title": "CodeVibe: Advanced Settings",
+        "icon": "$(gear)"
+      },
+      {
+        "command": "codePause.exportData",
+        "title": "CodeVibe: Export Data",
+        "icon": "$(export)"
+      },
+      {
+        "command": "codePause.importData",
+        "title": "CodeVibe: Import Data",
+        "icon": "$(import)"
+      },
+      {
+        "command": "codePause.showSnoozeStatus",
+        "title": "CodeVibe: Show Snooze Status"
+      },
+      {
+        "command": "codePause.changeExperienceLevel",
+        "title": "CodeVibe: Change Experience Level",
+        "icon": "$(account)"
+      },
+      {
+        "command": "codePause.forceFullScan",
+        "title": "CodeVibe: Force Full Scan (Find All AI Files)",
+        "icon": "$(search)"
+      },
+      {
+        "command": "codePause.resetAchievements",
+        "title": "CodeVibe: Reset Achievements",
+        "icon": "$(debug-restart)"
+      },
+      {
+        "command": "codePause.clearAllData",
+        "title": "CodeVibe: Clear All Data",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "codePause.cleanupOldData",
+        "title": "CodeVibe: Cleanup Old Data (Test 30-Day Retention)",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "codePause.purgeExcludedData",
+        "title": "CodeVibe: Purge Excluded-Path Data (node_modules, venv)",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "codePause.checkThresholds",
+        "title": "CodeVibe: Check Thresholds",
+        "icon": "$(bell)"
+      },
+      {
+        "command": "codePause.testNotification",
+        "title": "CodeVibe: Test Notifications (Debug)",
+        "icon": "$(bell-dot)"
+      },
+      {
+        "command": "codePause.createAssignment",
+        "title": "CodeVibe: Create Assignment",
+        "icon": "$(tasklist)"
+      },
+      {
+        "command": "codePause.activateAssignment",
+        "title": "CodeVibe: Activate Assignment",
+        "icon": "$(check)"
+      },
+      {
+        "command": "codePause.deactivateAssignment",
+        "title": "CodeVibe: Deactivate Assignment",
+        "icon": "$(close)"
+      },
+      {
+        "command": "codePause.showAssignmentStatus",
+        "title": "CodeVibe: Show Assignment Status",
+        "icon": "$(info)"
+      },
+      {
+        "command": "codePause.exportAssignmentReport",
+        "title": "CodeVibe: Export Assignment Report",
+        "icon": "$(export)"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "codePause",
+          "title": "CodeVibe",
+          "icon": "resources/codepause-activitybar.svg"
+        }
+      ]
+    },
+    "views": {
+      "codePause": [
+        {
+          "type": "webview",
+          "id": "codePause.dashboardView",
+          "name": "Dashboard"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "codePause.refreshDashboard",
+          "when": "view == codePause.dashboardView",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "CodeVibe",
+      "properties": {
+        "codePause.experienceLevel": {
+          "type": "string",
+          "enum": [
+            "junior",
+            "mid",
+            "senior"
+          ],
+          "default": "mid",
+          "description": "Your developer experience level (affects notification thresholds)"
+        },
+        "codePause.blindApprovalThreshold": {
+          "type": "number",
+          "default": 2000,
+          "description": "Time in milliseconds to consider an acceptance as insufficient review"
+        },
+        "codePause.alertFrequency": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "default": "medium",
+          "description": "How frequently you want to receive guidance notifications"
+        },
+        "codePause.enableGamification": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable achievements and progress tracking (legacy feature)"
+        },
+        "codePause.anonymizePaths": {
+          "type": "boolean",
+          "default": true,
+          "description": "Anonymize file paths in stored data"
+        },
+        "codePause.trackedTools": {
+          "type": "object",
+          "default": {
+            "copilot": true,
+            "cursor": true,
+            "claudeCode": true
+          },
+          "description": "Which AI tools to track (unified tracking enabled by default)"
+        },
+        "codePause.excludedGlobs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Extra file globs to hard-ignore (appended to the built-in node_modules/venv/build-output ignore list). Events in these paths are never tracked."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --coverageReporters=text-lcov | coveralls"
+  },
+  "devDependencies": {
+    "@jest/globals": "^30.2.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^20.19.27",
+    "@types/sql.js": "^1.4.9",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.x",
+    "@typescript-eslint/parser": "^6.x",
+    "@vscode/test-electron": "^2.3.0",
+    "eslint": "^8.x",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.6",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "date-fns": "^4.1.0",
+    "sql.js": "^1.13.0"
+  }
+}
